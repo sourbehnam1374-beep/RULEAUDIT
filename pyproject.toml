@@ -1,0 +1,48 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ruleaudit"
+version = "0.1.0"
+description = "A data-free structural audit protocol for expert-derived clinical decision rules."
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [
+    {name = "Behnam Sour", email = "sourbehnam1374@gmail.com"},
+]
+keywords = ["clinical decision rules", "audit", "identifiability", "sensitivity analysis", "MDL", "orthopedic surgery"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering :: Medical Science Apps.",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+dependencies = [
+    "numpy>=1.24",
+    "pandas>=2.0",
+    "scipy>=1.10",
+    "statsmodels>=0.14",
+    "matplotlib>=3.7",
+    "SALib>=1.4",
+    "scikit-learn>=1.3",
+    "tabulate>=0.9",  # for to_markdown()
+]
+
+[project.optional-dependencies]
+test = ["pytest>=7.0"]
+
+[project.scripts]
+ruleaudit = "ruleaudit.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/sourbehnam1374-beep/ruleaudit"
+Issues = "https://github.com/sourbehnam1374-beep/ruleaudit/issues"
+
+[tool.setuptools.packages.find]
+include = ["ruleaudit*"]

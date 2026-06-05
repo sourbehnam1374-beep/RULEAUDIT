@@ -22,6 +22,9 @@ def ideal_gt(pi): return 0.48 * pi - 15.0
 
 
 # ---------- component scoring (Yilgor 2017 Fig 6 / Table IV) ----------
+# Band edges use ".1" offsets (e.g. -7.1, -14.1, 10.1) purely to keep the
+# half-open intervals non-overlapping; they sit 0.1 deg off the paper's integer
+# category cuts, which is clinically immaterial for these radiographic angles.
 def score_rpv(rpv):
     """Relative Pelvic Version."""
     if rpv < -15.0:        return 3   # severe retroversion

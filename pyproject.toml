@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "ruleaudit"
-version = "0.1.0"
+version = "0.2.0"
 description = "A data-free structural audit protocol for expert-derived clinical decision rules."
 readme = "README.md"
 requires-python = ">=3.10"

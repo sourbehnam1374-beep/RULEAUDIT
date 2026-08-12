@@ -1,0 +1,14 @@
+,fire_rate,mean_contrib
+delta_ss_stiff,0.4594,9.188
+delta_ss_hyper,0.2236,4.0248
+pi_ll_mismatch,0.757,11.355
+comb_vers_oob,0.6265,8.771
+low_sit_av_stiff,0.1509,2.4144
+low_sit_av_hyper,0.0,0.0
+high_sit_av_stiff,0.0353,0.2118
+mob_stiff,0.4594,4.594
+mob_hyper,0.2236,1.7888
+deep_flex,0.2492,0.9968
+sit_to_stand,0.1108,0.4432
+uncert_fv,0.6441,7.7292
+uncert_overall,0.6389,3.8334

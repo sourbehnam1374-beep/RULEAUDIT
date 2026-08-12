@@ -4,8 +4,9 @@ ruleaudit CLI.
 Usage:
     python -m ruleaudit.cli run <example_script.py> --out <dir>
 
-The script must be a Python file that exposes a module-level variable `audit`
-of type RuleAudit, and optionally `seeds` and `out_dir`.
+The script must be a Python file that exposes either a module-level variable
+`audit` of type RuleAudit, or a `build_audit()` function returning one. It may
+optionally expose a `seeds` dict. The output directory is controlled by --out.
 """
 
 import argparse

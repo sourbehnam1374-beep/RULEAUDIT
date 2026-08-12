@@ -24,7 +24,13 @@ from .core import (
 )
 from .reporting import render_report
 
-__version__ = "0.1.0"
+# Single source of truth is pyproject.toml; read installed metadata when
+# available so the string can't drift from the packaged version.
+try:
+    from importlib.metadata import version as _pkg_version
+    __version__ = _pkg_version("ruleaudit")
+except Exception:  # not installed (e.g. run from source tree)
+    __version__ = "0.2.0"
 __all__ = [
     "RuleAudit", "InputSpec", "InputVar",
     "AuditResult", "FiringResult", "CorrelationResult",

@@ -310,6 +310,16 @@ class RuleAudit:
                          seeds: Dict[str, Dict[str, float]],
                          n_saltelli: int = 1024,
                          oat_steps: int = 50) -> SensitivityResult:
+        """Sobol + one-at-a-time sensitivity.
+
+        Note: both the Saltelli/Sobol design and the OAT sweep draw inputs
+        independently and uniformly over ``input_spec.bounds``; they do NOT use
+        ``input_spec.joint_sampler``. Sobol variance decomposition assumes
+        independent inputs, so this is intentional, but it means the sensitivity
+        tests run on a different input distribution than the random-sweep-based
+        tests (firing, correlation, VIF, identifiability) whenever a correlated
+        joint sampler is configured.
+        """
         from SALib.sample import sobol as sobol_sample
         from SALib.analyze import sobol as sobol_analyze
 

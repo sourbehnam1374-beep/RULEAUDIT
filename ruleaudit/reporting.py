@@ -201,6 +201,10 @@ def render_report(result: AuditResult, outdir: Path, title: str = "RuleAudit Rep
 
     # Sensitivity
     lines.append("## 4. Sensitivity analysis\n")
+    lines.append("_Sobol and one-at-a-time analyses sample inputs independently and "
+                 "uniformly over the declared bounds (variance decomposition assumes "
+                 "input independence). When a correlated `joint_sampler` is used for the "
+                 "other tests, the sensitivity input distribution differs accordingly._\n")
     sob = pd.DataFrame({
         "S1": result.sensitivity.sobol_S1.round(3),
         "ST": result.sensitivity.sobol_ST.round(3),

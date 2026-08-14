@@ -94,7 +94,7 @@ def plot_identifiability(result: AuditResult, out: Path):
                color="#1f77b4", edgecolor="black", linewidth=0.3)
     ax.set_xlabel("Total score")
     ax.set_ylabel("Diversity ratio (distinct patterns / cases)")
-    ax.set_title("Mechanism identifiability per total score")
+    ax.set_title("Activation-pattern multiplicity per total score")
     plt.savefig(out); plt.close()
 
 
@@ -169,7 +169,7 @@ def render_report(result: AuditResult, outdir: Path, title: str = "RuleAudit Rep
     all_flags += [("Correlation", f) for f in result.correlation.flags]
     all_flags += [("VIF", f) for f in result.vif.flags]
     all_flags += [("Sensitivity", f) for f in result.sensitivity.flags]
-    all_flags += [("Identifiability", f) for f in result.identifiability.flags]
+    all_flags += [("Pattern multiplicity", f) for f in result.identifiability.flags]
 
     lines.append("## Headline diagnostics\n")
     if not all_flags:
@@ -189,9 +189,16 @@ def render_report(result: AuditResult, outdir: Path, title: str = "RuleAudit Rep
     lines.append("")
 
     # Correlation
-    lines.append("## 2. Driver orthogonality\n")
-    lines.append(f"Maximum off-diagonal |r| = "
-                 f"{result.correlation.strong_pairs.iloc[0] if len(result.correlation.strong_pairs) > 0 else 0:.3f}\n")
+    lines.append("## 2. Driver activation correlation\n")
+    pearson = result.correlation.pearson
+    if pearson.shape[0] > 1:
+        upper = pearson.where(
+            np.triu(np.ones(pearson.shape, dtype=bool), k=1)
+        ).stack().abs()
+        max_offdiag = float(upper.max()) if len(upper) else 0.0
+    else:
+        max_offdiag = 0.0
+    lines.append(f"Maximum off-diagonal |r| = {max_offdiag:.3f}\n")
     lines.append("![Correlation heatmap](fig_correlation.png)\n")
 
     # VIF
@@ -213,11 +220,16 @@ def render_report(result: AuditResult, outdir: Path, title: str = "RuleAudit Rep
     lines.append("\n![Sobol indices](fig_sobol.png)\n")
     lines.append("![OAT sensitivity](fig_oat.png)\n")
 
-    # Identifiability
-    lines.append("## 5. Identifiability per total score\n")
+    # Activation-pattern multiplicity (legacy API field: identifiability)
+    lines.append("## 5. Activation-pattern multiplicity per total score\n")
+    lines.append(
+        "_Descriptive only: counts and ratios depend on the configured input "
+        "distribution and sample size; they do not establish statistical "
+        "identifiability, outcome heterogeneity, or clinical validity._\n"
+    )
     if len(result.identifiability.per_total) > 0:
         lines.append(result.identifiability.per_total.to_markdown(index=False))
-    lines.append("\n![Identifiability](fig_identifiability.png)\n")
+    lines.append("\n![Activation-pattern multiplicity](fig_identifiability.png)\n")
 
     # MDL
     if result.mdl is not None:
@@ -230,5 +242,5 @@ def render_report(result: AuditResult, outdir: Path, title: str = "RuleAudit Rep
         lines.append("")
 
     rpath = outdir / "report.md"
-    rpath.write_text("\n".join(lines))
+    rpath.write_text("\n".join(lines), encoding="utf-8")
     return rpath

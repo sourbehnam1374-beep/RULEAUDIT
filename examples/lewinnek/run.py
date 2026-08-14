@@ -22,5 +22,5 @@ if __name__ == "__main__":
     rpath = render_report(result, out, title=f"{lewinnek.metadata['name']} — RuleAudit Report")
     n_flags = sum(len(getattr(result, t).flags) for t in
                   ["firing", "correlation", "vif", "sensitivity", "identifiability"])
-    print(f"  Report → {rpath}")
+    print(f"  Report -> {rpath}")
     print(f"  Flags raised: {n_flags}")

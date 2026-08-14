@@ -4,20 +4,19 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "ruleaudit"
-version = "0.2.0"
-description = "A data-free structural audit protocol for expert-derived clinical decision rules."
+version = "0.2.1"
+description = "Outcome-free structural screening for deterministic additive clinical scores."
 readme = "README.md"
 requires-python = ">=3.10"
-license = {text = "MIT"}
+license = "MIT"
 authors = [
     {name = "Behnam Sour", email = "sourbehnam1374@gmail.com"},
 ]
-keywords = ["clinical decision rules", "audit", "identifiability", "sensitivity analysis", "MDL", "orthopedic surgery"]
+keywords = ["clinical decision rules", "structural screening", "sensitivity analysis", "synthetic data", "reproducibility"]
 classifiers = [
     "Development Status :: 3 - Alpha",
     "Intended Audience :: Science/Research",
     "Topic :: Scientific/Engineering :: Medical Science Apps.",
-    "License :: OSI Approved :: MIT License",
     "Programming Language :: Python :: 3 :: Only",
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
@@ -29,7 +28,7 @@ dependencies = [
     "scipy>=1.10",
     "statsmodels>=0.14",
     "matplotlib>=3.7",
-    "SALib>=1.4",
+    "SALib>=1.5.2",
     "scikit-learn>=1.3",
     "tabulate>=0.9",  # for to_markdown()
 ]

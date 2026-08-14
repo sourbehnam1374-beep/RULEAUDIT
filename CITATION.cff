@@ -1,0 +1,24 @@
+cff-version: 1.2.0
+message: "If you use RuleAudit, please cite the software using this metadata."
+title: "RuleAudit: Outcome-Free Structural Screening for Deterministic Additive Clinical Scores"
+type: software
+authors:
+  - family-names: Sour
+    given-names: Behnam
+    orcid: "https://orcid.org/0009-0002-3176-1956"
+    affiliation: "Bone and Joint Reconstruction Research Center, Shafa Yahyaeian Orthopedic Hospital, Iran University of Medical Sciences, Tehran, Iran"
+version: 0.2.1
+license: MIT
+repository-code: "https://github.com/sourbehnam1374-beep/ruleaudit"
+url: "https://github.com/sourbehnam1374-beep/ruleaudit"
+abstract: >-
+  Alpha-stage research software for descriptive structural screening of
+  deterministic additive clinical scores under user-specified synthetic input
+  distributions. The software does not establish predictive accuracy,
+  causality, clinical validity, transportability, or safety.
+keywords:
+  - clinical decision rules
+  - structural screening
+  - sensitivity analysis
+  - synthetic data
+  - reproducibility

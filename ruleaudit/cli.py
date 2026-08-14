@@ -55,7 +55,7 @@ def main():
         result = mod.audit.run(n_random=args.n_random, seeds=seeds,
                                n_saltelli=args.n_saltelli)
         rpath = render_report(result, args.out, title=args.title)
-        print(f"Wrote report → {rpath}")
+        print(f"Wrote report -> {rpath}")
 
 
 if __name__ == "__main__":

@@ -1,4 +1,4 @@
-# SHIVA SPIN-THA v7.4 — RuleAudit Report
+# SHIVA SPIN-THA v7.4 (audit reference) — RuleAudit Report
 
 **N synthetic cases:** 10,000
 **Drivers analysed:** 13
@@ -17,47 +17,47 @@
 - **Correlation**: COLLINEAR: 'mob_stiff' ↔ 'deep_flex' (|r|=0.531)
 - **VIF**: EXTREME-VIF: 'delta_ss_hyper' has VIF=inf
 - **VIF**: EXTREME-VIF: 'mob_hyper' has VIF=inf
-- **VIF**: EXTREME-VIF: 'mob_stiff' has VIF=inf
-- **VIF**: EXTREME-VIF: 'delta_ss_stiff' has VIF=8.88e+03
+- **VIF**: EXTREME-VIF: 'delta_ss_stiff' has VIF=1.61e+06
+- **VIF**: EXTREME-VIF: 'mob_stiff' has VIF=7.80e+05
 - **VIF**: HIGH-VIF: 'deep_flex' has VIF=7.95
-- **Sensitivity**: INTERACTION-DOMINATED: 'pi' (S1=-0.002, ST=0.092, interaction share 102.4%)
-- **Sensitivity**: INTERACTION-DOMINATED: 'll' (S1=-0.020, ST=0.094, interaction share 121.5%)
-- **Sensitivity**: INTERACTION-DOMINATED: 'ss_standing' (S1=0.028, ST=0.562, interaction share 95.1%)
-- **Sensitivity**: INTERACTION-DOMINATED: 'ss_sitting' (S1=0.158, ST=0.677, interaction share 76.7%)
+- **Sensitivity**: INTERACTION-DOMINATED: 'pi' (S1=-0.013, ST=0.101, interaction share 112.4%)
+- **Sensitivity**: INTERACTION-DOMINATED: 'll' (S1=-0.007, ST=0.095, interaction share 107.1%)
+- **Sensitivity**: INTERACTION-DOMINATED: 'ss_standing' (S1=-0.070, ST=0.513, interaction share 113.6%)
+- **Sensitivity**: INTERACTION-DOMINATED: 'ss_sitting' (S1=0.060, ST=0.669, interaction share 91.0%)
 - **Sensitivity**: INERT: 'pt_standing' has ST=0.0000 — input does not move score
-- **Sensitivity**: INTERACTION-DOMINATED: 'cup_anteversion' (S1=0.020, ST=0.139, interaction share 85.8%)
+- **Sensitivity**: INTERACTION-DOMINATED: 'cup_anteversion' (S1=0.041, ST=0.143, interaction share 71.3%)
 - **Sensitivity**: INERT: 'cup_inclination' has ST=0.0000 — input does not move score
-- **Sensitivity**: INTERACTION-DOMINATED: 'femoral_version' (S1=0.018, ST=0.111, interaction share 83.7%)
-- **Identifiability**: COLLAPSE: total=18.0 has 122.0 cases collapsing to 2.0 patterns (div=0.016)
-- **Identifiability**: COLLAPSE: total=21.0 has 193.0 cases collapsing to 1.0 patterns (div=0.005)
-- **Identifiability**: COLLAPSE: total=27.0 has 176.0 cases collapsing to 1.0 patterns (div=0.006)
-- **Identifiability**: COLLAPSE: total=29.0 has 166.0 cases collapsing to 1.0 patterns (div=0.006)
-- **Identifiability**: COLLAPSE: total=32.0 has 179.0 cases collapsing to 1.0 patterns (div=0.006)
-- **Identifiability**: COLLAPSE: total=33.0 has 379.0 cases collapsing to 2.0 patterns (div=0.005)
-- **Identifiability**: COLLAPSE: total=35.0 has 306.0 cases collapsing to 1.0 patterns (div=0.003)
-- **Identifiability**: COLLAPSE: total=41.0 has 330.0 cases collapsing to 1.0 patterns (div=0.003)
-- **Identifiability**: COLLAPSE: total=45.0 has 179.0 cases collapsing to 3.0 patterns (div=0.017)
-- **Identifiability**: COLLAPSE: total=47.0 has 591.0 cases collapsing to 1.0 patterns (div=0.002)
-- **Identifiability**: COLLAPSE: total=50.0 has 174.0 cases collapsing to 3.0 patterns (div=0.017)
-- **Identifiability**: COLLAPSE: total=51.0 has 311.0 cases collapsing to 4.0 patterns (div=0.013)
-- **Identifiability**: COLLAPSE: total=57.0 has 304.0 cases collapsing to 3.0 patterns (div=0.010)
-- **Identifiability**: COLLAPSE: total=59.0 has 225.0 cases collapsing to 2.0 patterns (div=0.009)
-- **Identifiability**: COLLAPSE: total=61.0 has 131.0 cases collapsing to 2.0 patterns (div=0.015)
-- **Identifiability**: COLLAPSE: total=62.0 has 262.0 cases collapsing to 3.0 patterns (div=0.011)
-- **Identifiability**: COLLAPSE: total=63.0 has 508.0 cases collapsing to 4.0 patterns (div=0.008)
-- **Identifiability**: COLLAPSE: total=65.0 has 419.0 cases collapsing to 3.0 patterns (div=0.007)
-- **Identifiability**: COLLAPSE: total=66.0 has 111.0 cases collapsing to 2.0 patterns (div=0.018)
-- **Identifiability**: COLLAPSE: total=67.0 has 223.0 cases collapsing to 2.0 patterns (div=0.009)
-- **Identifiability**: COLLAPSE: total=69.0 has 146.0 cases collapsing to 2.0 patterns (div=0.014)
-- **Identifiability**: COLLAPSE: total=71.0 has 446.0 cases collapsing to 3.0 patterns (div=0.007)
-- **Identifiability**: COLLAPSE: total=73.0 has 104.0 cases collapsing to 1.0 patterns (div=0.010)
-- **Identifiability**: COLLAPSE: total=75.0 has 219.0 cases collapsing to 2.0 patterns (div=0.009)
-- **Identifiability**: COLLAPSE: total=77.0 has 811.0 cases collapsing to 3.0 patterns (div=0.004)
-- **Identifiability**: COLLAPSE: total=78.0 has 100.0 cases collapsing to 1.0 patterns (div=0.010)
-- **Identifiability**: COLLAPSE: total=79.0 has 168.0 cases collapsing to 1.0 patterns (div=0.006)
-- **Identifiability**: COLLAPSE: total=81.0 has 375.0 cases collapsing to 2.0 patterns (div=0.005)
-- **Identifiability**: COLLAPSE: total=87.0 has 189.0 cases collapsing to 1.0 patterns (div=0.005)
-- **Identifiability**: COLLAPSE: total=93.0 has 290.0 cases collapsing to 1.0 patterns (div=0.003)
+- **Sensitivity**: INTERACTION-DOMINATED: 'femoral_version' (S1=0.029, ST=0.105, interaction share 72.8%)
+- **Pattern multiplicity**: LOW-PATTERN-RATIO: total=18.0 has 122.0 cases and 2.0 observed patterns (ratio=0.016)
+- **Pattern multiplicity**: LOW-PATTERN-RATIO: total=21.0 has 193.0 cases and 1.0 observed patterns (ratio=0.005)
+- **Pattern multiplicity**: LOW-PATTERN-RATIO: total=27.0 has 176.0 cases and 1.0 observed patterns (ratio=0.006)
+- **Pattern multiplicity**: LOW-PATTERN-RATIO: total=29.0 has 166.0 cases and 1.0 observed patterns (ratio=0.006)
+- **Pattern multiplicity**: LOW-PATTERN-RATIO: total=32.0 has 179.0 cases and 1.0 observed patterns (ratio=0.006)
+- **Pattern multiplicity**: LOW-PATTERN-RATIO: total=33.0 has 379.0 cases and 2.0 observed patterns (ratio=0.005)
+- **Pattern multiplicity**: LOW-PATTERN-RATIO: total=35.0 has 306.0 cases and 1.0 observed patterns (ratio=0.003)
+- **Pattern multiplicity**: LOW-PATTERN-RATIO: total=41.0 has 330.0 cases and 1.0 observed patterns (ratio=0.003)
+- **Pattern multiplicity**: LOW-PATTERN-RATIO: total=45.0 has 179.0 cases and 3.0 observed patterns (ratio=0.017)
+- **Pattern multiplicity**: LOW-PATTERN-RATIO: total=47.0 has 591.0 cases and 1.0 observed patterns (ratio=0.002)
+- **Pattern multiplicity**: LOW-PATTERN-RATIO: total=50.0 has 174.0 cases and 3.0 observed patterns (ratio=0.017)
+- **Pattern multiplicity**: LOW-PATTERN-RATIO: total=51.0 has 311.0 cases and 4.0 observed patterns (ratio=0.013)
+- **Pattern multiplicity**: LOW-PATTERN-RATIO: total=57.0 has 304.0 cases and 3.0 observed patterns (ratio=0.010)
+- **Pattern multiplicity**: LOW-PATTERN-RATIO: total=59.0 has 225.0 cases and 2.0 observed patterns (ratio=0.009)
+- **Pattern multiplicity**: LOW-PATTERN-RATIO: total=61.0 has 131.0 cases and 2.0 observed patterns (ratio=0.015)
+- **Pattern multiplicity**: LOW-PATTERN-RATIO: total=62.0 has 262.0 cases and 3.0 observed patterns (ratio=0.011)
+- **Pattern multiplicity**: LOW-PATTERN-RATIO: total=63.0 has 508.0 cases and 4.0 observed patterns (ratio=0.008)
+- **Pattern multiplicity**: LOW-PATTERN-RATIO: total=65.0 has 419.0 cases and 3.0 observed patterns (ratio=0.007)
+- **Pattern multiplicity**: LOW-PATTERN-RATIO: total=66.0 has 111.0 cases and 2.0 observed patterns (ratio=0.018)
+- **Pattern multiplicity**: LOW-PATTERN-RATIO: total=67.0 has 223.0 cases and 2.0 observed patterns (ratio=0.009)
+- **Pattern multiplicity**: LOW-PATTERN-RATIO: total=69.0 has 146.0 cases and 2.0 observed patterns (ratio=0.014)
+- **Pattern multiplicity**: LOW-PATTERN-RATIO: total=71.0 has 446.0 cases and 3.0 observed patterns (ratio=0.007)
+- **Pattern multiplicity**: LOW-PATTERN-RATIO: total=73.0 has 104.0 cases and 1.0 observed patterns (ratio=0.010)
+- **Pattern multiplicity**: LOW-PATTERN-RATIO: total=75.0 has 219.0 cases and 2.0 observed patterns (ratio=0.009)
+- **Pattern multiplicity**: LOW-PATTERN-RATIO: total=77.0 has 811.0 cases and 3.0 observed patterns (ratio=0.004)
+- **Pattern multiplicity**: LOW-PATTERN-RATIO: total=78.0 has 100.0 cases and 1.0 observed patterns (ratio=0.010)
+- **Pattern multiplicity**: LOW-PATTERN-RATIO: total=79.0 has 168.0 cases and 1.0 observed patterns (ratio=0.006)
+- **Pattern multiplicity**: LOW-PATTERN-RATIO: total=81.0 has 375.0 cases and 2.0 observed patterns (ratio=0.005)
+- **Pattern multiplicity**: LOW-PATTERN-RATIO: total=87.0 has 189.0 cases and 1.0 observed patterns (ratio=0.005)
+- **Pattern multiplicity**: LOW-PATTERN-RATIO: total=93.0 has 290.0 cases and 1.0 observed patterns (ratio=0.003)
 
 ## 1. Driver firing rates
 
@@ -77,7 +77,7 @@
 | high_sit_av_stiff |       0.035 |           0.21 |
 | low_sit_av_hyper  |       0     |           0    |
 
-## 2. Driver orthogonality
+## 2. Driver activation correlation
 
 Maximum off-diagonal |r| = 1.000
 
@@ -85,35 +85,37 @@ Maximum off-diagonal |r| = 1.000
 
 ## 3. Variance Inflation Factor
 
-|                   |      VIF |
-|:------------------|---------:|
-| delta_ss_hyper    |  inf     |
-| mob_hyper         |  inf     |
-| mob_stiff         |  inf     |
-| delta_ss_stiff    | 8883.5   |
-| deep_flex         |    7.953 |
-| sit_to_stand      |    1.763 |
-| low_sit_av_stiff  |    1.319 |
-| high_sit_av_stiff |    1.09  |
-| uncert_fv         |    1.001 |
-| uncert_overall    |    1.001 |
-| pi_ll_mismatch    |    1.001 |
-| comb_vers_oob     |    1.001 |
+|                   |              VIF |
+|:------------------|-----------------:|
+| delta_ss_hyper    |    inf           |
+| mob_hyper         |    inf           |
+| delta_ss_stiff    |      1.61197e+06 |
+| mob_stiff         | 780084           |
+| deep_flex         |      7.953       |
+| sit_to_stand      |      1.763       |
+| low_sit_av_stiff  |      1.319       |
+| high_sit_av_stiff |      1.09        |
+| uncert_fv         |      1.001       |
+| pi_ll_mismatch    |      1.001       |
+| uncert_overall    |      1.001       |
+| comb_vers_oob     |      1           |
 
 ![VIF](fig_vif.png)
 
 ## 4. Sensitivity analysis
 
+_Sobol and one-at-a-time analyses sample inputs independently and uniformly over the declared bounds (variance decomposition assumes input independence). When a correlated `joint_sampler` is used for the other tests, the sensitivity input distribution differs accordingly._
+
 |                 |     S1 |    ST |
 |:----------------|-------:|------:|
-| ss_sitting      |  0.158 | 0.677 |
-| ss_standing     |  0.028 | 0.562 |
-| cup_anteversion |  0.02  | 0.139 |
-| femoral_version |  0.018 | 0.111 |
-| ll              | -0.02  | 0.094 |
-| pi              | -0.002 | 0.092 |
-| conf_fv         |  0.095 | 0.082 |
-| conf_overall    |  0.015 | 0.021 |
+| ss_sitting      |  0.06  | 0.669 |
+| ss_standing     | -0.07  | 0.513 |
+| cup_anteversion |  0.041 | 0.143 |
+| femoral_version |  0.029 | 0.105 |
+| pi              | -0.013 | 0.101 |
+| ll              | -0.007 | 0.095 |
+| conf_fv         |  0.074 | 0.082 |
+| conf_overall    |  0.022 | 0.02  |
 | pt_standing     |  0     | 0     |
 | cup_inclination |  0     | 0     |
 
@@ -121,7 +123,9 @@ Maximum off-diagonal |r| = 1.000
 
 ![OAT sensitivity](fig_oat.png)
 
-## 5. Identifiability per total score
+## 5. Activation-pattern multiplicity per total score
+
+_Descriptive only: counts and ratios depend on the configured input distribution and sample size; they do not establish statistical identifiability, outcome heterogeneity, or clinical validity._
 
 |   total |   n_cases |   n_patterns |   diversity_ratio |
 |--------:|----------:|-------------:|------------------:|
@@ -190,4 +194,4 @@ Maximum off-diagonal |r| = 1.000
 |      87 |       189 |            1 |        0.00529101 |
 |      93 |       290 |            1 |        0.00344828 |
 
-![Identifiability](fig_identifiability.png)
+![Activation-pattern multiplicity](fig_identifiability.png)

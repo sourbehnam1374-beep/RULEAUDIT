@@ -5,7 +5,9 @@ sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[1]))
 
 import numpy as np
 import pandas as pd
+from importlib.metadata import version
 from ruleaudit import RuleAudit, InputSpec, InputVar
+import ruleaudit
 
 
 def trivial_rule(inp):
@@ -66,13 +68,29 @@ def test_run_end_to_end():
     assert result.sensitivity.sobol_ST.sum() > 0
 
 
+def test_runtime_version_matches_distribution_metadata():
+    assert ruleaudit.__version__ == version("ruleaudit")
+
+
+def test_sobol_results_are_reproducible_for_same_seed():
+    seeds = {"mid": {"x": 50.0}}
+    first = RuleAudit(rule=trivial_rule, input_spec=SPEC, seed=17)
+    second = RuleAudit(rule=trivial_rule, input_spec=SPEC, seed=17)
+    a = first.run(n_random=250, seeds=seeds, n_saltelli=64).sensitivity
+    b = second.run(n_random=250, seeds=seeds, n_saltelli=64).sensitivity
+    np.testing.assert_allclose(a.sobol_S1, b.sobol_S1, equal_nan=True)
+    np.testing.assert_allclose(a.sobol_ST, b.sobol_ST, equal_nan=True)
+    np.testing.assert_allclose(a.sobol_S1_conf, b.sobol_S1_conf, equal_nan=True)
+    np.testing.assert_allclose(a.sobol_ST_conf, b.sobol_ST_conf, equal_nan=True)
+
+
 if __name__ == "__main__":
     test_basic_sweep()
-    print("✓ test_basic_sweep")
+    print("PASS test_basic_sweep")
     test_firing_flags()
-    print("✓ test_firing_flags")
+    print("PASS test_firing_flags")
     test_correlation_perfect()
-    print("✓ test_correlation_perfect")
+    print("PASS test_correlation_perfect")
     test_run_end_to_end()
-    print("✓ test_run_end_to_end")
+    print("PASS test_run_end_to_end")
     print("All tests passed.")

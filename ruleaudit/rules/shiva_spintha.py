@@ -98,17 +98,17 @@ seeds = {
 
 metadata = {
     "name": "SHIVA SPIN-THA v7.4 (audit reference)",
-    "citation": "Sour B, Gharanizadeh K. SPIN-THA: an open, deterministic, "
-                "audit-driven web toolkit for spinopelvic planning support "
-                "in total hip arthroplasty. SoftwareX 2026 (submitted).",
+    "citation": (
+        "Illustrative SHIVA SPIN-THA v7.4 encoding reconstructed from "
+        "internal audit documentation; no publication claim is made."
+    ),
     "category": "THA spinopelvic risk score",
     "type": "integer-additive multi-driver risk score",
     "driver_names": list(WEIGHTS.keys()),
     "category_names": ["LOW", "WATCH", "HIGH"],
     "validation_history": (
-        "Reconstructed from internal audit documentation. Findings reported "
-        "in the SHIVA SPIN-THA submission as the audit-driven remediation "
-        "step that motivated the RuleAudit protocol. Production engine is "
-        "v1.0.0 with structural fixes applied."
+        "Reconstructed from internal audit documentation as an illustrative "
+        "worked example. It is not an independently validated reference "
+        "implementation and is not evidence of clinical validity."
     ),
 }

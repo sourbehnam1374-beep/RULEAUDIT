@@ -1,5 +1,5 @@
 """
-ruleaudit — a data-free structural audit protocol for expert-derived clinical decision rules.
+ruleaudit — outcome-free structural screening for deterministic additive clinical scores.
 
 Usage:
     from ruleaudit import RuleAudit, InputSpec, InputVar
@@ -30,7 +30,7 @@ try:
     from importlib.metadata import version as _pkg_version
     __version__ = _pkg_version("ruleaudit")
 except Exception:  # not installed (e.g. run from source tree)
-    __version__ = "0.2.0"
+    __version__ = "0.2.1"
 __all__ = [
     "RuleAudit", "InputSpec", "InputVar",
     "AuditResult", "FiringResult", "CorrelationResult",

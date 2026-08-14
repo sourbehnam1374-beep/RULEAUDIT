@@ -328,13 +328,23 @@ class RuleAudit:
             "names":    self.input_spec.names,
             "bounds":   [list(b) for b in self.input_spec.bounds],
         }
-        X = sobol_sample.sample(problem, n_saltelli, calc_second_order=False)
+        X = sobol_sample.sample(
+            problem,
+            n_saltelli,
+            calc_second_order=False,
+            seed=self.seed,
+        )
         Y = np.empty(len(X))
         for i, row in enumerate(X):
             inp = dict(zip(problem["names"], row))
             Y[i] = self._call(inp)["total"]
-        Si = sobol_analyze.analyze(problem, Y, calc_second_order=False,
-                                   print_to_console=False)
+        Si = sobol_analyze.analyze(
+            problem,
+            Y,
+            calc_second_order=False,
+            print_to_console=False,
+            seed=self.seed,
+        )
         names = problem["names"]
         S1 = pd.Series(Si["S1"], index=names)
         ST = pd.Series(Si["ST"], index=names)
@@ -360,6 +370,13 @@ class RuleAudit:
                                  sobol_ST_conf=STc, oat=oat, flags=flags)
 
     def test_identifiability(self, sweep: pd.DataFrame) -> IdentifiabilityResult:
+        """Summarize activation-pattern multiplicity within each total score.
+
+        This is a descriptive diagnostic.  The diversity ratio depends on the
+        sample size and configured input distribution; it is not a classical
+        statistical identifiability test and does not establish outcome
+        heterogeneity or clinical validity.
+        """
         cols = [f"d_{n}" for n in self._driver_names]
         patterns = sweep[cols].apply(lambda r: tuple(int(x) for x in r), axis=1)
         df = pd.DataFrame({"total": sweep["total"], "pattern": patterns})
@@ -376,20 +393,21 @@ class RuleAudit:
         per_total = pd.DataFrame(rows).sort_values("total")
 
         flags = []
-        # Look for high collapse near band boundaries: low diversity, high N
+        # Heuristic review prompts only; these are not validated pass/fail rules.
         for _, r in per_total.iterrows():
             if r["n_cases"] >= 100 and r["diversity_ratio"] < 0.02:
                 flags.append(
-                    f"COLLAPSE: total={r['total']} has {r['n_cases']} cases collapsing "
-                    f"to {r['n_patterns']} patterns (div={r['diversity_ratio']:.3f})"
+                    f"LOW-PATTERN-RATIO: total={r['total']} has {r['n_cases']} cases "
+                    f"and {r['n_patterns']} observed patterns "
+                    f"(ratio={r['diversity_ratio']:.3f})"
                 )
-        # And the opposite: high diversity at clinically critical mid-range
         mid = per_total[(per_total["diversity_ratio"] > 0.025) &
                        (per_total["n_cases"] >= 200)]
         for _, r in mid.iterrows():
             flags.append(
-                f"MECH-SPRAWL: total={r['total']} encodes {r['n_patterns']} distinct "
-                f"mechanism patterns across {r['n_cases']} cases"
+                f"HIGH-PATTERN-MULTIPLICITY: total={r['total']} contains "
+                f"{r['n_patterns']} observed activation patterns across "
+                f"{r['n_cases']} cases"
             )
         return IdentifiabilityResult(per_total=per_total, flags=flags)
 

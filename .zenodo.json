@@ -1,0 +1,22 @@
+{
+  "title": "RuleAudit: Outcome-Free Structural Screening for Deterministic Additive Clinical Scores",
+  "upload_type": "software",
+  "description": "Alpha-stage research software for descriptive structural screening of deterministic additive clinical scores under user-specified synthetic input distributions. The software does not establish predictive accuracy, causality, clinical validity, transportability, or safety.",
+  "creators": [
+    {
+      "name": "Sour, Behnam",
+      "orcid": "0009-0002-3176-1956",
+      "affiliation": "Bone and Joint Reconstruction Research Center, Shafa Yahyaeian Orthopedic Hospital, Iran University of Medical Sciences, Tehran, Iran"
+    }
+  ],
+  "access_right": "open",
+  "license": "MIT",
+  "version": "0.2.1",
+  "keywords": [
+    "clinical decision rules",
+    "structural screening",
+    "sensitivity analysis",
+    "synthetic data",
+    "reproducibility"
+  ]
+}
